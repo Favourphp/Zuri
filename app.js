@@ -7,10 +7,11 @@ app.get('/api', (req, res) => {
   const track = req.query.track;
 
   const current_day = new Date().toLocaleDateString('en-US', { weekday: 'long' });
-  const utc_time = now.toISOString().slice(0,19) + 'Z';
+  const now = new Date()
+  const utc_time = now.toISOString().slice(0, 19) + 'Z'; 
 
-  const github_file_url = 'https://github.com/Favourphp/Zuri.git';
-  const github_repo_url = 'https://github.com/favourphp';
+  const github_file_url = 'https://github.com/Favourphp/Zuri/app.js';
+  const github_repo_url = 'https://github.com/favourphp/Zuri';
 
   const response_data = {
     slack_name,
